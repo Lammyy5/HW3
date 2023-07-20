@@ -5,6 +5,14 @@ var lowercase = ['a','b','c','e','f','g','h','i','j','k','l','m','n','o','p','q'
 var special = ['!','@','#','$','%','^','&','*','-','+','=','|','?','<','>','`','~','_'];
 var possible = [];
 
+function generatePassword() {
+  var howManycharacters = prompt("How many characters would you like your password to have? Between 8-128 characters.");
+howManycharacters = parseInt(howManycharacters,10)
+ if (howManycharacters < 8 | howManycharacters > 128) {
+  alert("Please enter a valid password between 8 - 128.");
+ }
+}
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
