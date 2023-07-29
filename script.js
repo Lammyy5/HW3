@@ -1,27 +1,35 @@
 // Assignment Code
- const numbers = '0123456789';
- const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
- const lowercase = 'abcefghijklmnopqrstuvwxyz';
- const special = '!@#$%^&*-+=|?<>`~_';
-
- const characters = numbers + uppercase + lowercase + special;
+const numbers = '0123456789';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lowerCase = 'abcefghijklmnopqrstuvwxyz';
+const special = '!@#$%^&*-+=|?<>`~_';
+const characters = [numbers, upperCase, lowerCase, special];
 
 
 function generatePassword() {
-  var howManycharacters = prompt("How many characters would you like your password to have? Between 8-128 characters.");
-howManycharacters = parseInt(howManycharacters,10)
- if (howManycharacters < 8 | howManycharacters > 128) {
-  alert("Please enter a valid password between 8 - 128.");
-  return;
- }
- else if (isNaN(howManycharacters)) {
-  howManycharacters = alert("Please enter a valid number.")
- } else { 
-  var uppercase = confirm("would you like your password to include uppercase?");
-if (uppercase) {
-  
-}
- }
+  var charChoiceNum = window.prompt("How many characters would you like your password to have? Between 8-128 characters.");
+  var charChoiceNum = parseInt(charChoiceNum, 10);
+  if (charChoiceNum < 8 || charChoiceNum > 128) {
+    alert("Please enter a valid password between 8 - 128.");
+    return;
+  }
+  if (isNaN(charChoiceNum)) {
+    charChoiceNum = window.alert("Please enter a valid number.");
+  }
+  var useUpperCase = confirm("Do you want to use uppercase characters?");
+  var useLowerCase = confirm("Do you want to use lowercase characters?");
+  var useNumbers = confirm("Do you want to use numbers characters?");
+  var useSpecial = confirm("Do you want to use special characters?");
+
+
+  if (!useUpperCase && !useLowerCase && !useNumbers && !usespecial) {
+    alert("Password must include at least one character type.")
+    return;
+  }
+
+
+} {
+
 }
 
 
