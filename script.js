@@ -28,11 +28,21 @@ function generatePassword() {
   }
   if (window.confirm("Do you want to use special characters?")) {
     passChars = passChars.concat(special)
-  };
-  for (let i = 0; i < charChoiceNum; i++) {
-    const randomChar = passChars[i];
-
   }
+  ;
+  if (passChars == false) {
+    window.alert("Must have at least one character choice selected");
+    generatePassword();
+  }
+  var password = "";
+
+
+
+  for (let i = 0; i < charChoiceNum; i++) {
+    var randomIndex = (Math.floor(Math.random() * passChars.length));
+    password = passChars[randomIndex];
+  }
+  return password;
 }
 
 
