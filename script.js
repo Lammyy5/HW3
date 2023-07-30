@@ -7,30 +7,38 @@ const characters = [numbers, upperCase, lowerCase, special];
 
 
 function generatePassword() {
-  var charChoiceNum = window.prompt("How many characters would you like your password to have? Between 8-128 characters.");
-  var charChoiceNum = parseInt(charChoiceNum, 10);
-  if (charChoiceNum < 8 || charChoiceNum > 128) {
-    alert("Please enter a valid password between 8 - 128.");
-    return;
+  var charChoice = window.prompt("How many characters would you like your password to have? Between 8-128 characters.");
+  var charChoiceNum = parseInt(charChoice, 10);
+  var passChars = [];
+
+
+
+  if (isNaN(charChoiceNum) || charChoiceNum < 8 || charChoiceNum > 128) {
+    window.alert("Please enter a valid number.");
+    generatePassword();
   }
-  if (isNaN(charChoiceNum)) {
-    charChoiceNum = window.alert("Please enter a valid number.");
+  if (window.confirm("Do you want to use uppercase characters?")) {
+    passChars = passChars.concat(upperCase)
   }
-  var useUpperCase = confirm("Do you want to use uppercase characters?");
-  var useLowerCase = confirm("Do you want to use lowercase characters?");
-  var useNumbers = confirm("Do you want to use numbers characters?");
-  var useSpecial = confirm("Do you want to use special characters?");
-
-
-  if (!useUpperCase && !useLowerCase && !useNumbers && !usespecial) {
-    alert("Password must include at least one character type.")
-    return;
+  if (window.confirm("Do you want to use lowercase characters?")) {
+    passChars = passChars.concat(lowerCase)
   }
+  if (window.confirm("Do you want to use numbers characters?")) {
+    passChars = passChars.concat(numbers)
+  }
+  if (window.confirm("Do you want to use special characters?")) {
+    passChars = passChars.concat(special)
+  };
+  for (let i = 0; i < charChoiceNum; i++) {
+    const randomChar = passChars[i];
 
-
-} {
-
+  }
 }
+
+
+
+
+
 
 
 
